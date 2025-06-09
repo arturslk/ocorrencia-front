@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../pages/Login.css";
 import { FaEnvelope, FaLock } from "react-icons/fa";
@@ -19,14 +19,12 @@ function Login() {
         senha,
       });
 
-      const user = response.data;
-
-      if (user.token) {
-        localStorage.setItem("token", user.token);
-        localStorage.setItem("user", JSON.stringify(user));
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data)); // Guarda dados do usuário para profile
         navigate("/profile");
       } else {
-        setErro("Login falhou: token não recebido");
+        setErro("Credenciais inválidas");
       }
     } catch (err) {
       setErro("Credenciais inválidas");
@@ -50,6 +48,7 @@ function Login() {
                 required
               />
             </div>
+
             <div className="input-group">
               <FaLock className="input-icon" />
               <input
@@ -60,9 +59,18 @@ function Login() {
                 required
               />
             </div>
+
             <button type="submit">Entrar</button>
           </form>
+
           {erro && <p className="erro">{erro}</p>}
+
+          <p style={{ marginTop: "15px", textAlign: "center" }}>
+            Não tem conta?{" "}
+            <Link to="/cadastrar" style={{ color: "#007bff", textDecoration: "none" }}>
+              Cadastre-se
+            </Link>
+          </p>
         </div>
       </div>
     </div>
