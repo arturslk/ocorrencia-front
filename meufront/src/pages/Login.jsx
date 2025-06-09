@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./login.css";
+import "../pages/Login.css";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 
 function Login() {
