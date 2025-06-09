@@ -68,4 +68,30 @@ button {
   background-color: #2e7d32;
   color: white;
   border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+/* Mensagem de erro */
+.erro {
+  color: red;
+  margin-top: 15px;
+}
+
+/* Link de cadastro */
+.cadastro-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.cadastro-link a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
 }
