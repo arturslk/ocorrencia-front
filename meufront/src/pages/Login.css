@@ -1,110 +1,91 @@
-/* Reset e base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Login.css */
 
-body {
-  background: linear-gradient(135deg, #e9fbe5, #d1f7cc);
-  height: 100vh;
+.login-container {
+  min-height: 100vh; /* ocupar a tela toda */
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1s ease;
+  background: #f5f5f5; /* cor clara para fundo */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.login-container {
-  width: 90%;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  display: flex;
+.login-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
   overflow: hidden;
-  animation: fadeIn 0.8s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Imagem ao lado */
 .login-image {
-  flex: 1;
-  background-image: url("https://images.unsplash.com/photo-1584697964400-0e85f7183bdc"); /* substitua se quiser */
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
-  display: none;
+  height: 150px;
+  background: url('/path-to-your-image.jpg') center center/cover no-repeat;
+  /* Ou use outra cor ou imagem */
 }
 
 .login-form {
-  flex: 1;
-  padding: 3rem 2rem;
+  padding: 30px 25px;
 }
 
-h2 {
-  color: #2e7d32;
-  margin-bottom: 2rem;
+.login-form h2 {
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .input-group {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .input-icon {
   position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  color: #66bb6a;
+  top: 12px;
+  left: 12px;
+  color: #aaa;
 }
 
-input {
+input[type="email"],
+input[type="password"] {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-  border: 1px solid #c8e6c9;
-  border-radius: 8px;
-  background-color: #f4fff3;
+  padding: 12px 12px 12px 38px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-input:focus {
-  border-color: #43a047;
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
   outline: none;
 }
 
-button {
+button[type="submit"] {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #43a047;
+  padding: 12px;
+  background-color: #007bff;
   color: white;
+  font-weight: 600;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #388e3c;
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
 .erro {
-  color: red;
+  margin-top: 10px;
+  color: #d9534f;
   text-align: center;
-  margin-top: 1rem;
-}
-
-/* Responsivo */
-@media (min-width: 768px) {
-  .login-image {
-    display: block;
-  }
+  font-weight: 600;
+  font-size: 0.9rem;
 }
