@@ -56,9 +56,9 @@ function Login() {
           <button type="submit">Entrar</button>
         </form>
         {erro && <p className="erro">{erro}</p>}
-        <p className="cadastro-link">
+        <div className="cadastro-link">
           Não tem conta? <Link to="/cadastrar">Cadastre-se</Link>
-        </p>
+        </div>
       </div>
     </div>
   );
