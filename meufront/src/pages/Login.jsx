@@ -12,15 +12,21 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErro("");
     try {
       const response = await axios.post("https://ocorrencia-blush.vercel.app/", {
         email,
         senha,
       });
 
-      if (response.data.token) {
-        localStorage.setItem("token", response.data.token);
+      const user = response.data;
+
+      if (user.token) {
+        localStorage.setItem("token", user.token);
+        localStorage.setItem("user", JSON.stringify(user));
         navigate("/profile");
+      } else {
+        setErro("Login falhou: token não recebido");
       }
     } catch (err) {
       setErro("Credenciais inválidas");
