@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Profile.css";
 
 function Profile() {
   const [user, setUser] = useState(null);
+  const [view, setView] = useState("perfil");
+  const [turmas, setTurmas] = useState([]);
+  const [disciplinas, setDisciplinas] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,35 +27,86 @@ function Profile() {
     navigate("/");
   };
 
+  const fetchTurmas = async () => {
+    try {
+      const response = await axios.get("https://ocorrencia-blush.vercel.app/turmas");
+      setTurmas(response.data);
+      setView("turmas");
+    } catch (error) {
+      console.error("Erro ao buscar turmas:", error);
+    }
+  };
+
+  const fetchDisciplinas = async () => {
+    try {
+      const response = await axios.get("https://ocorrencia-blush.vercel.app/disciplinas");
+      setDisciplinas(response.data);
+      setView("disciplinas");
+    } catch (error) {
+      console.error("Erro ao buscar disciplinas:", error);
+    }
+  };
+
   return (
-    <div className="profile-container">
-      <header className="header">
-        <h1>Sistema de Ocorrência</h1>
-      </header>
+    <div className="profile-page">
+      <aside className="sidebar">
+        <h2 className="logo">Ocorrências</h2>
+        <ul>
+          <li onClick={() => setView("perfil")} className={view === "perfil" ? "active" : ""}>
+            Perfil
+          </li>
+          <li onClick={fetchTurmas} className={view === "turmas" ? "active" : ""}>
+            Turmas
+          </li>
+          <li onClick={fetchDisciplinas} className={view === "disciplinas" ? "active" : ""}>
+            Disciplinas
+          </li>
+          <li onClick={handleLogout}>Sair</li>
+        </ul>
+      </aside>
 
-      <div className="main-content">
-        <aside className="sidebar">
-          <ul>
-            <li className="active">Perfil</li>
-            <li>Turmas</li>
-            <li>Disciplinas</li>
-            <li onClick={handleLogout} className="logout">Sair</li>
-          </ul>
-        </aside>
+      <main className="main-content">
+        {view === "perfil" && user && (
+          <div className="section">
+            <h2>Informações do Usuário</h2>
+            <p><strong>Nome:</strong> {user.nome}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>ID:</strong> {user.id}</p>
+          </div>
+        )}
 
-        <section className="profile-details">
-          <h2>Informações do Usuário</h2>
-          {user ? (
-            <div className="user-info">
-              <p><strong>Nome:</strong> {user.nome}</p>
-              <p><strong>Email:</strong> {user.email}</p>
-              <p><strong>ID:</strong> {user.id}</p>
-            </div>
-          ) : (
-            <p>Carregando informações do usuário...</p>
-          )}
-        </section>
-      </div>
+        {view === "turmas" && (
+          <div className="section">
+            <h2>Turmas Cadastradas</h2>
+            {turmas.length > 0 ? (
+              <ul>
+                {turmas.map((turma) => (
+                  <li key={turma.id}>
+                    {turma.nome} - {turma.turno}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>Nenhuma turma encontrada.</p>
+            )}
+          </div>
+        )}
+
+        {view === "disciplinas" && (
+          <div className="section">
+            <h2>Disciplinas Cadastradas</h2>
+            {disciplinas.length > 0 ? (
+              <ul>
+                {disciplinas.map((disciplina) => (
+                  <li key={disciplina.id}>{disciplina.nome}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>Nenhuma disciplina encontrada.</p>
+            )}
+          </div>
+        )}
+      </main>
     </div>
   );
 }
