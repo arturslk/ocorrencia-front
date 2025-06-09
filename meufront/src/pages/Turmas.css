@@ -1,0 +1,61 @@
+/* Container centralizado e responsivo */
+.turmas-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #e6f4ea; /* verde clarinho */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(46, 125, 50, 0.3);
+  color: #2d5f2d; /* verde escuro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.turmas-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.turmas-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.turma-item {
+  background-color: #d2ecd2; /* tom verde suave */
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.turma-item:hover {
+  background-color: #b0d8a9;
+}
+
+/* Mensagens */
+.loading, .erro, .empty {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #2d5f2d;
+  font-weight: 600;
+}
+
+/* Responsividade simples */
+@media (max-width: 640px) {
+  .turmas-container {
+    margin: 20px;
+    padding: 15px;
+  }
+  .turma-item {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+}
