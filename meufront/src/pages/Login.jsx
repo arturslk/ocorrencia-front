@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://ocorrencia-blush.vercel.app/", {
+      const response = await axios.post("https://ocorrencia-blush.vercel.app/login", {
         email,
         senha,
       });
