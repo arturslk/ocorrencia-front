@@ -12,6 +12,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErro("");
     try {
       const response = await axios.post("https://ocorrencia-blush.vercel.app/", {
         email,
@@ -20,8 +21,10 @@ function Login() {
 
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("user", JSON.stringify(response.data)); // Guarda dados do usuário para profile
         navigate("/profile");
+      } else {
+        setErro("Credenciais inválidas");
       }
     } catch (err) {
       setErro("Credenciais inválidas");
@@ -29,35 +32,45 @@ function Login() {
   };
 
   return (
-    <div className="login-fullscreen">
+    <div className="login-container">
       <div className="login-card">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <FaEnvelope className="input-icon" />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-group">
-            <FaLock className="input-icon" />
-            <input
-              type="password"
-              placeholder="Senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Entrar</button>
-        </form>
-        {erro && <p className="erro">{erro}</p>}
-        <div className="cadastro-link">
-          Não tem conta? <Link to="/cadastrar">Cadastre-se</Link>
+        <div className="login-image" />
+        <div className="login-form">
+          <h2>Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <FaEnvelope className="input-icon" />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <FaLock className="input-icon" />
+              <input
+                type="password"
+                placeholder="Senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit">Entrar</button>
+          </form>
+
+          {erro && <p className="erro">{erro}</p>}
+
+          <p style={{ marginTop: "15px", textAlign: "center" }}>
+            Não tem conta?{" "}
+            <Link to="/cadastrar" style={{ color: "#007bff", textDecoration: "none" }}>
+              Cadastre-se
+            </Link>
+          </p>
         </div>
       </div>
     </div>
