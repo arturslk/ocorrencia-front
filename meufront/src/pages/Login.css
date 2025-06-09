@@ -1,39 +1,24 @@
-/* Login.css */
-
-.login-container {
-  min-height: 100vh; /* ocupar a tela toda */
+.login-fullscreen {
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #f5f5f5; /* cor clara para fundo */
-  padding: 20px;
-  box-sizing: border-box;
+  justify-content: center;
+  background: #e8f5e9;
 }
 
 .login-card {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 100%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
   max-width: 400px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.login-image {
-  height: 150px;
-  background: url('/path-to-your-image.jpg') center center/cover no-repeat;
-  /* Ou use outra cor ou imagem */
-}
-
-.login-form {
-  padding: 30px 25px;
-}
-
-.login-form h2 {
-  margin-bottom: 20px;
   text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  color: #2e7d32;
 }
 
 .input-group {
@@ -43,49 +28,48 @@
 
 .input-icon {
   position: absolute;
+  left: 10px;
   top: 12px;
-  left: 12px;
-  color: #aaa;
+  color: #2e7d32;
 }
 
-input[type="email"],
-input[type="password"] {
+.input-group input {
   width: 100%;
-  padding: 12px 12px 12px 38px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #007bff;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   outline: none;
+  font-size: 16px;
 }
 
-button[type="submit"] {
+button {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
+  background-color: #2e7d32;
   color: white;
-  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: #1b5e20;
 }
 
 .erro {
-  margin-top: 10px;
-  color: #d9534f;
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.9rem;
+  color: red;
+  margin-top: 15px;
+}
+
+.cadastro-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.cadastro-link a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
 }
