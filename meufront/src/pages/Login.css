@@ -1,16 +1,26 @@
-.login-fullscreen {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e8f5e9;
+/* Remove margem padrão da página */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+/* Container que ocupa a tela toda */
+.login-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8f5e9; /* verde claro */
+}
+
+/* Cartão de login centralizado */
 .login-card {
   background: white;
   padding: 40px 30px;
   border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 400px;
   text-align: center;
@@ -21,6 +31,7 @@
   color: #2e7d32;
 }
 
+/* Inputs e ícones */
 .input-group {
   position: relative;
   margin-bottom: 20px;
@@ -42,6 +53,7 @@
   font-size: 16px;
 }
 
+/* Botão de login */
 button {
   width: 100%;
   padding: 12px;
@@ -58,11 +70,13 @@ button:hover {
   background-color: #1b5e20;
 }
 
+/* Mensagem de erro */
 .erro {
   color: red;
   margin-top: 15px;
 }
 
+/* Link de cadastro */
 .cadastro-link {
   margin-top: 20px;
   font-size: 14px;
