@@ -1,121 +1,101 @@
-/* Reset básico e fonte */
-html, body {
+/* Reset e fundo */
+body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://images.unsplash.com/photo-1475359526154-d7f2e77cbb4d') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* Container principal: ocupa a tela toda e centraliza conteúdo */
-div[style*="padding: 2rem"] {
+/* Container geral */
+.login-container {
   height: 100vh;
-  width: 100vw;
   display: flex;
-  flex-direction: column;      /* para que o título e o form fiquem um em cima do outro */
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, black 0%, #000DFF 100%);
-  box-sizing: border-box;
-  padding: 2rem;
+  padding-left: 60px;
 }
 
-/* Título */
-h2 {
-  text-align: right; /* Alinha o texto à direita */
-  margin-bottom: 2rem;
-  color: white;
-  font-weight: 700;
-  font-size: 1.9rem;
-}
-
-h3 {
-  color: #ddd;
-  font-size: 1rem;
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-
-/* Formulário branco com sombra */
-form {
-  background: rgba(255, 255, 255, 0.15); /* mais transparente */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari */
-  padding: 2.5rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+/* Cartão de login */
+.login-card {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 40px 30px;
+  border-radius: 16px;
   width: 320px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* borda vidro */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
+.login-form h2 {
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: bold;
+}
 
+/* Input com ícones */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
 
-/* Inputs */
-input[type="email"],
-input[type="password"] {
+.input-group input {
   width: 100%;
-  padding: 12px 15px;
+  padding: 12px 12px 12px 40px;
   border-radius: 8px;
-  border: 1.5px solid #ccc;
-  font-size: 1rem;
-  outline-color: #6B73FF;
-  transition: border-color 0.3s;
-  box-sizing: border-box;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #6B73FF;
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: white;
 }
 
 /* Botão */
-button {
+button[type="submit"] {
   width: 100%;
   padding: 12px;
-  background-color: #13164b;
+  background-color: #00c896;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #262d68;
+button[type="submit"]:hover {
+  background-color: #00a37a;
 }
 
-/* Parágrafo com link */
-form > p {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: black;
+/* Link de cadastro */
+.login-form p {
+  margin-top: 16px;
+  font-size: 14px;
 }
 
-form > p > a {
-  color: #13164b;
+.login-form a {
+  color: #00c896;
   text-decoration: none;
-  font-weight: 600;
 }
 
-form > p > a:hover {
+.login-form a:hover {
   text-decoration: underline;
 }
 
-/* Mensagem de erro DENTRO do formulário */
-form > p[style*="color: red"] {
-  margin-top: 1rem;
-  color: red;
-  font-weight: 600;
+/* Erro */
+.erro {
+  margin-top: 10px;
+  color: #ff6b6b;
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
 }
-
