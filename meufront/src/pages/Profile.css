@@ -14,6 +14,7 @@ html, body {
   width: 100vw; /* ESSA LINHA GARANTE QUE O VERDE+BRANCO OCUPA TUDO */
 }
 
+
 /* Sidebar */
 .sidebar {
   background-color: #2e7d32; /* Verde escuro educativo */
@@ -23,7 +24,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100vh; /* <-- ADICIONADO */
+  
 }
 
 .logo {
@@ -37,10 +38,6 @@ html, body {
   padding: 0;
   margin: 0;
   width: 100%;
-
-  display: flex;           /* <-- ADICIONADO */
-  flex-direction: column;  /* <-- ADICIONADO */
-  flex-grow: 1;            /* <-- ADICIONADO */
 }
 
 .sidebar li {
@@ -58,13 +55,6 @@ html, body {
 .sidebar .active {
   background-color: #145a1c;
   font-weight: bold;
-}
-
-/* Empurra o botão Sair para o fim da sidebar */
-.sidebar ul li:last-child {
-  margin-top: 200px; /* empurra para baixo */
-  background-color: #b71c1c; /* vermelho para destaque */
-  color: white;
 }
 
 /* Main Content */
@@ -123,7 +113,6 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: auto; /* <-- para não manter altura fixa no mobile */
   }
 
   .sidebar ul {
@@ -131,7 +120,6 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    flex-grow: 0; /* desativa no mobile */
   }
 
   .sidebar li {
