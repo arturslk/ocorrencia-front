@@ -1,18 +1,19 @@
-/* Reset e base */
-body, html, h2, p, ul, li {
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #f9f9f9; /* esse é o branco do fundo */
+  
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 100%;
-  background-color: #f9f9f9;
 }
 
 .profile-page {
   display: flex;
-  min-height: 100vh;
-  width: 100vw;
+  height: 100vh;
+  width: 100vw; /* ESSA LINHA GARANTE QUE O VERDE+BRANCO OCUPA TUDO */
 }
+
 
 /* Sidebar */
 .sidebar {
@@ -61,16 +62,13 @@ body, html, h2, p, ul, li {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
-  box-sizing: border-box;
-  overflow-y: auto;
 }
 
 .section {
   background-color: #e8f5e9; /* Verde bem clarinho */
   border-radius: 12px;
   padding: 30px 40px;
-  max-width: 600px;
+  max-width: 600px; /* <-- largura máxima */
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
