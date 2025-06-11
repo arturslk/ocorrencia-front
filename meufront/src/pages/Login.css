@@ -1,59 +1,56 @@
+/* Login.css */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-body {
-  height: 100vh;
-  background-color: #2ecc71; /* fundo verde educacional */
-}
-
-/* Container geral */
-.login-container {
+body, html {
   height: 100%;
-  width: 100%;
+  background-color: #e8f5e9; /* verde claro suave */
+}
+
+.login-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2ecc71;
+  background-color: #e8f5e9;
   padding: 20px;
 }
 
-/* Card com borda e sombra */
 .login-card {
   display: flex;
   width: 900px;
   max-width: 95%;
-  background-color: #27ae60;
   border-radius: 12px;
+  background-color: white;
   overflow: hidden;
-  color: white;
-  border: 3px solid white;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Imagem + explicação */
+/* Lado da imagem */
 .login-image {
   flex: 1;
   background: url('../assets/login.png') no-repeat center center;
   background-size: cover;
-  min-height: 350px;
-  border-right: 2px solid white;
+  min-height: 400px;
   position: relative;
 }
 
 .login-image::after {
-  content: "Este sistema foi desenvolvido para registrar e acompanhar ocorrências escolares, promovendo transparência, segurança e organização para a gestão escolar.";
+  content: "Este sistema foi desenvolvido para registrar e acompanhar ocorrências escolares.";
   position: absolute;
   bottom: 0;
-  background: rgba(39, 174, 96, 0.9);
-  color: #fff;
-  padding: 20px;
-  font-size: 14px;
-  line-height: 1.4;
   width: 100%;
+  background: rgba(46, 125, 50, 0.85); /* verde escuro transparente */
+  color: white;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* Formulário */
@@ -63,35 +60,28 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #ffffff;
 }
 
 .login-form h2 {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 26px;
-  color: white;
+  color: #2e7d32;
 }
 
-/* Inputs */
 .input-group {
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 30px;
+  background-color: #f1f8e9;
+  border-radius: 8px;
   margin-bottom: 20px;
-  padding: 12px 18px;
-  border: 2px solid #1e8449;
-  transition: 0.3s;
+  padding: 10px 15px;
+  border: 1px solid #c8e6c9;
+  transition: border 0.3s;
 }
 
 .input-group:focus-within {
-  border-color: #145a32;
-  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
-}
-
-.input-icon {
-  color: #2ecc71;
-  font-size: 18px;
+  border-color: #2e7d32;
 }
 
 .input-group input {
@@ -100,54 +90,59 @@ body {
   flex: 1;
   margin-left: 10px;
   font-size: 15px;
-  color: #2c3e50;
-  background: transparent;
+  background-color: transparent;
+  color: #333;
 }
 
-/* Botão de envio */
+.input-icon {
+  color: #2e7d32;
+  font-size: 16px;
+}
+
+/* Botão */
 button[type="submit"] {
   padding: 12px;
   width: 100%;
   border: none;
-  border-radius: 30px;
-  background-color: white;
-  color: #27ae60;
+  border-radius: 8px;
+  background-color: #2e7d32;
+  color: white;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
   transition: background-color 0.3s ease;
+  margin-top: 5px;
 }
 
 button[type="submit"]:hover {
-  background-color: #d5f5e3;
+  background-color: #1b5e20;
+}
+
+/* Erro */
+.erro {
+  color: #fff;
+  background-color: #c62828;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 /* Link de cadastro */
 .login-form p {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
   font-size: 14px;
+  color: #555;
 }
 
 .login-form a {
-  color: #ffffff;
+  color: #2e7d32;
   font-weight: bold;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .login-form a:hover {
-  color: #d0f0da;
-}
-
-/* Mensagem de erro */
-.erro {
-  color: #fff;
-  background-color: #c0392b;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
+  text-decoration: underline;
 }
