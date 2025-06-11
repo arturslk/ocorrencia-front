@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+import Cadastrar from "./pages/Cadatrar";
 
 function App() {
   return (
