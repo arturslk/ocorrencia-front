@@ -1,14 +1,15 @@
-/* Certifique-se de que o HTML e o BODY ocupam a tela toda */
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw; /* <-- garantir 100% da largura */
   font-family: Arial, sans-serif;
 }
 
 .profile-page {
   display: flex;
-  height: 100vh; /* Ocupa a altura total da tela */
+  height: 100vh;
+  width: 100vw; /* <-- garantir 100% da largura */
   background-color: #f0fff0;
 }
 
