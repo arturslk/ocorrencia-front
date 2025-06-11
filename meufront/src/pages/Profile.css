@@ -1,5 +1,8 @@
 html, body {
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -11,12 +14,12 @@ html, body {
 
 .profile-page {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   background-color: #f5fff7; /* branco esverdeado */
 }
 
-/* Topo */
 .topbar {
   display: flex;
   align-items: center;
@@ -25,6 +28,7 @@ html, body {
   color: white;
   padding: 15px 30px;
   border-bottom: 4px solid #1b5e20;
+  flex-shrink: 0; /* evita encolher */
 }
 
 .user-info {
@@ -55,7 +59,6 @@ html, body {
   color: #e8f5e9;
 }
 
-/* Botão sair */
 .logout-button {
   background-color: #66bb6a;
   color: white;
@@ -72,13 +75,13 @@ html, body {
   background-color: #4caf50;
 }
 
-/* Menu horizontal */
 .menu {
   background-color: #e8f5e9; /* verde claro */
   border-left: 3px solid #1b5e20;
   border-right: 3px solid #1b5e20;
   border-bottom: 3px solid #1b5e20;
   padding: 10px 0;
+  flex-shrink: 0; /* fixa altura do menu */
 }
 
 .menu ul {
@@ -107,14 +110,14 @@ html, body {
   border-radius: 6px;
 }
 
-/* Conteúdo */
 .main-content {
-  flex: 1;
+  flex: 1; /* ocupa espaço restante */
   border: 3px solid #1b5e20;
   border-top: none;
   padding: 30px;
   background-color: #ffffff;
   overflow-y: auto;
+  min-height: 0; /* permite scroll funcionar dentro de flex */
 }
 
 .section h2 {
