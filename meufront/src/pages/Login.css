@@ -2,34 +2,39 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #2ecc71; /* verde educacional */
+  height: 100vh;
+  background-color: #2ecc71; /* fundo verde educacional */
 }
 
+/* Container geral */
 .login-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #2ecc71;
+  padding: 20px;
 }
 
+/* Card com borda e sombra */
 .login-card {
   display: flex;
   width: 900px;
   max-width: 95%;
-  border: 3px solid white;
-  border-radius: 10px;
   background-color: #27ae60;
+  border-radius: 12px;
   overflow: hidden;
   color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Lado da imagem e explicação */
+/* Imagem + explicação */
 .login-image {
   flex: 1;
   background: url('../assets/login.png') no-repeat center center;
@@ -44,9 +49,11 @@ body {
   position: absolute;
   bottom: 0;
   background: rgba(39, 174, 96, 0.9);
+  color: #fff;
   padding: 20px;
   font-size: 14px;
   line-height: 1.4;
+  width: 100%;
 }
 
 /* Formulário */
@@ -61,16 +68,30 @@ body {
 .login-form h2 {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 26px;
+  color: white;
 }
 
+/* Inputs */
 .input-group {
   display: flex;
   align-items: center;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 30px;
   margin-bottom: 20px;
-  padding: 10px 15px;
+  padding: 12px 18px;
+  border: 2px solid #1e8449;
+  transition: 0.3s;
+}
+
+.input-group:focus-within {
+  border-color: #145a32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.input-icon {
+  color: #2ecc71;
+  font-size: 18px;
 }
 
 .input-group input {
@@ -78,35 +99,51 @@ body {
   outline: none;
   flex: 1;
   margin-left: 10px;
-  font-size: 14px;
-  color: #333;
+  font-size: 15px;
+  color: #2c3e50;
+  background: transparent;
 }
 
-.input-icon {
-  color: #27ae60;
-}
-
-/* Botão */
+/* Botão de envio */
 button[type="submit"] {
-  padding: 10px;
+  padding: 12px;
   width: 100%;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   background-color: white;
   color: #27ae60;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #ecf0f1;
+  background-color: #d5f5e3;
 }
 
-/* Erro */
+/* Link de cadastro */
+.login-form p {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-form a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.login-form a:hover {
+  color: #d0f0da;
+}
+
+/* Mensagem de erro */
 .erro {
-  color: #ffdddd;
+  color: #fff;
   background-color: #c0392b;
   padding: 10px;
   border-radius: 8px;
