@@ -18,6 +18,7 @@ function Profile() {
       navigate("/");
     } else {
       setUser(JSON.parse(userData));
+
     }
   }, [navigate]);
 
@@ -49,21 +50,35 @@ function Profile() {
 
   return (
     <div className="profile-page">
-      <aside className="sidebar">
-        <h2 className="logo">Sistema de Ocorrências</h2>
+      <header className="topbar">
+        <div className="user-info">
+          <div className="avatar" />
+          <div className="welcome">
+            <p>Bem-vindo(a)</p>
+            <strong>{user?.nome}</strong>
+          </div>
+        </div>
+
+        <h1 className="logo">Sistema de Ocorrencias</h1>
+
+        <button className="logout-button" onClick={handleLogout}>
+          Sair
+        </button>
+      </header>
+
+      <nav className="menu">
         <ul>
-          <li onClick={() => setView("perfil")} className={view === "perfil" ? "active" : ""}>
-            Perfil
-          </li>
-          <li onClick={fetchTurmas} className={view === "turmas" ? "active" : ""}>
+          <li onClick={() => setView("turmas")} className={view === "turmas" ? "active" : ""}>
             Turmas
           </li>
           <li onClick={fetchOcorrências} className={view === "Ocorrências" ? "active" : ""}>
-            Ocorrências
+            Ocorrencias
           </li>
-          <li onClick={handleLogout}>Sair</li>
+          <li onClick={() => setView("sobre")} className={view === "sobre" ? "active" : ""}>
+            Sobre
+          </li>
         </ul>
-      </aside>
+      </nav>
 
       <main className="main-content">
         {view === "perfil" && user && (
@@ -97,13 +112,20 @@ function Profile() {
             <h2>Ocorrências</h2>
             {Ocorrências.length > 0 ? (
               <ul>
-                {Ocorrências.map((Ocorrências) => (
-                  <li key={Ocorrências.id}>{Ocorrências.nome}</li>
+                {Ocorrências.map((ocorrencia) => (
+                  <li key={ocorrencia.id}>{ocorrencia.nome}</li>
                 ))}
               </ul>
             ) : (
               <p>Nenhuma ocorrência encontrada.</p>
             )}
+          </div>
+        )}
+
+        {view === "sobre" && (
+          <div className="section">
+            <h2>Sobre</h2>
+            <p>Este sistema foi desenvolvido para registrar ocorrências escolares.</p>
           </div>
         )}
       </main>
