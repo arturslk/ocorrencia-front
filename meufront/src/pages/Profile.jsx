@@ -7,7 +7,7 @@ function Profile() {
   const [user, setUser] = useState(null);
   const [view, setView] = useState("perfil");
   const [turmas, setTurmas] = useState([]);
-  const [disciplinas, setDisciplinas] = useState([]);
+  const [Ocorrências, setOcorrências] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,11 +37,11 @@ function Profile() {
     }
   };
 
-  const fetchDisciplinas = async () => {
+  const fetchOcorrências = async () => {
     try {
       const response = await axios.get("https://ocorrencia-blush.vercel.app/disciplinas");
-      setDisciplinas(response.data);
-      setView("disciplinas");
+      setOcorrências(response.data);
+      setView("Ocorrências");
     } catch (error) {
       console.error("Erro ao buscar disciplinas:", error);
     }
@@ -58,8 +58,8 @@ function Profile() {
           <li onClick={fetchTurmas} className={view === "turmas" ? "active" : ""}>
             Turmas
           </li>
-          <li onClick={fetchDisciplinas} className={view === "disciplinas" ? "active" : ""}>
-            Disciplinas
+          <li onClick={fetchOcorrências} className={view === "Ocorrências" ? "active" : ""}>
+            Ocorrências
           </li>
           <li onClick={handleLogout}>Sair</li>
         </ul>
@@ -92,7 +92,7 @@ function Profile() {
           </div>
         )}
 
-        {view === "disciplinas" && (
+        {view === "Ocorrências" && (
           <div className="section">
             <h2>Disciplinas Cadastradas</h2>
             {disciplinas.length > 0 ? (
