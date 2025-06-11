@@ -1,118 +1,116 @@
-/* Reset e fundo */
-body, html {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Fvetor-gratis%2Ffundo-espacial&psig=AOvVaw0bQdyeYTwpIfF-tWlDNMFg&ust=1749755019048000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjC0MSH6o0DFQAAAAAdAAAAABAE') no-repeat center center fixed;
-  background-size: cover;
-
-  /* Centraliza vertical e horizontalmente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: sans-serif;
 }
 
-/* Container geral */
+body {
+  background-color: #2ecc71; /* verde educacional */
+}
+
 .login-container {
-  height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #2ecc71;
 }
 
-/* Cartão de login */
 .login-card {
-  background-color: rgba(240, 255, 240, 0.9); /* verde clarinho com transparência */
-  padding: 40px 30px;
-  border-radius: 16px;
-  width: 320px;
-  box-shadow: 0 8px 30px rgba(0, 128, 0, 0.3);
-  color: #004d00; /* texto verde escuro */
-  text-align: center;
+  display: flex;
+  width: 900px;
+  max-width: 95%;
+  border: 3px solid white;
+  border-radius: 10px;
+  background-color: #27ae60;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Título */
-.login-form h2 {
-  margin-bottom: 24px;
-  font-size: 26px;
-  font-weight: bold;
-  color: #006600; /* verde mais vivo */
-}
-
-/* Input com ícones */
-.input-group {
+/* Lado da imagem e explicação */
+.login-image {
+  flex: 1;
+  background: url('../assets/login.png') no-repeat center center;
+  background-size: cover;
+  min-height: 350px;
+  border-right: 2px solid white;
   position: relative;
+}
+
+.login-image::after {
+  content: "Este sistema foi desenvolvido para registrar e acompanhar ocorrências escolares, promovendo transparência, segurança e organização para a gestão escolar.";
+  position: absolute;
+  bottom: 0;
+  background: rgba(39, 174, 96, 0.9);
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Formulário */
+.login-form {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
   margin-bottom: 20px;
+  padding: 10px 15px;
 }
 
 .input-group input {
-  width: 83%;
-  padding: 12px 12px 12px 40px;
-  border-radius: 8px;
-  border: 2px solid #00c896;
-  background-color: #f0fff0; /* verde muito claro */
-  color: #004d00;
+  border: none;
   outline: none;
-  font-weight: 600;
-  transition: border-color 0.3s ease;
-}
-
-.input-group input::placeholder {
-  color: #66bb66;
-}
-
-.input-group input:focus {
-  border-color: #009966;
+  flex: 1;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
 }
 
 .input-icon {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  color: #009966;
+  color: #27ae60;
 }
 
 /* Botão */
 button[type="submit"] {
+  padding: 10px;
   width: 100%;
-  padding: 12px;
-  background-color: #00c896;
-  color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 25px;
+  background-color: white;
+  color: #27ae60;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #007a54;
-}
-
-/* Link de cadastro */
-.login-form p {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #004d00;
-}
-
-.login-form a {
-  color: #00c896;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-form a:hover {
-  text-decoration: underline;
+  background-color: #ecf0f1;
 }
 
 /* Erro */
 .erro {
-  margin-top: 10px;
-  color: #ff6b6b;
+  color: #ffdddd;
+  background-color: #c0392b;
+  padding: 10px;
+  border-radius: 8px;
   text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
 }
