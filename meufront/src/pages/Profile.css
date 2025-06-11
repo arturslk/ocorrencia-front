@@ -3,12 +3,14 @@ body, h2, p, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+   width: 100vw; /* <-- garantir 100% da largura */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .profile-page {
   display: flex;
   min-height: 100vh;
+  width: 100vw; /* <-- garantir 100% da largura */
   background-color: #f9f9f9;
 }
 
@@ -54,7 +56,7 @@ body, h2, p, ul, li {
 /* Main Content */
 .main-content {
   flex: 1;
-  padding: 40px 60px;
+  padding: 40px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
