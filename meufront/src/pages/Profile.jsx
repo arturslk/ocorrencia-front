@@ -50,7 +50,7 @@ function Profile() {
   return (
     <div className="profile-page">
       <aside className="sidebar">
-        <h2 className="logo">Ocorrências</h2>
+        <h2 className="logo">Sistema de Ocorrências</h2>
         <ul>
           <li onClick={() => setView("perfil")} className={view === "perfil" ? "active" : ""}>
             Perfil
