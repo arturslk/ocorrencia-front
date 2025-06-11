@@ -62,7 +62,7 @@ html, body {
 
 /* Empurra o botão Sair para o fim da sidebar */
 .sidebar ul li:last-child {
-  margin-top: auto; /* empurra para baixo */
+  margin-top: 20px; /* empurra para baixo */
   background-color: #b71c1c; /* vermelho para destaque */
   color: white;
 }
