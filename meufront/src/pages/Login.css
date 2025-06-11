@@ -44,7 +44,7 @@ body, html {
   content: "Este sistema foi desenvolvido para registrar e acompanhar ocorrências escolares.";
   position: absolute;
   bottom: 0;
-  width: 95%;
+  width: 93%;
   background: rgba(46, 125, 50, 0.85); /* verde escuro transparente */
   color: white;
   padding: 16px;
@@ -76,7 +76,6 @@ body, html {
   border-radius: 8px;
   margin-bottom: 20px;
   padding: 10px 15px;
-  transition: border 0.3s;
 }
 
 .input-group:focus-within {
@@ -95,7 +94,6 @@ body, html {
   flex: 1;
   margin-left: 10px;
   font-size: 15px;
-  background-color: transparent;
 }
 
 /* Botão */
