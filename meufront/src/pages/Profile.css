@@ -1,15 +1,15 @@
-body {
+/* Certifique-se de que o HTML e o BODY ocupam a tela toda */
+html, body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: Arial, sans-serif;
-
 }
 
 .profile-page {
   display: flex;
-  height: 100vh;
+  height: 100vh; /* Ocupa a altura total da tela */
   background-color: #f0fff0;
-  height: 100%;
 }
 
 .sidebar {
@@ -30,6 +30,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar li {
