@@ -94,15 +94,15 @@ function Profile() {
 
         {view === "Ocorrências" && (
           <div className="section">
-            <h2>Disciplinas Cadastradas</h2>
-            {disciplinas.length > 0 ? (
+            <h2>Ocorrências</h2>
+            {Ocorrências.length > 0 ? (
               <ul>
-                {disciplinas.map((disciplina) => (
-                  <li key={disciplina.id}>{disciplina.nome}</li>
+                {Ocorrências.map((Ocorrências) => (
+                  <li key={Ocorrências.id}>{Ocorrências.nome}</li>
                 ))}
               </ul>
             ) : (
-              <p>Nenhuma disciplina encontrada.</p>
+              <p>Nenhuma ocorrência encontrada.</p>
             )}
           </div>
         )}
