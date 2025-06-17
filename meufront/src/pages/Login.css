@@ -1,4 +1,4 @@
-/* Reset e configurações globais */
+/* Login.css */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,168 +8,102 @@
 
 body, html {
   height: 100%;
-  background-color: #e8f5e9; /* Verde claro suave */
+  width: 100%;
+  background-color: #e8f5e9; /* verde claro suave */
 }
 
-/* Container principal */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  height: 100vh;
 }
 
-/* Cartão de login */
 .login-card {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 12px;
   background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
 }
 
-/* Seção da imagem */
 .login-image {
   flex: 1;
-  background: url('../assets/login.png') no-repeat center center;
+  background-image: url("https://source.unsplash.com/400x400/?technology");
   background-size: cover;
-  min-height: 400px;
-  position: relative;
+  background-position: center;
 }
 
-.login-image::after {
-  content: "Este sistema foi desenvolvido para registrar e acompanhar ocorrências escolares.";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(46, 125, 50, 0.85); /* Verde escuro transparente */
-  color: white;
-  padding: 16px;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* Formulário de login */
 .login-form {
   flex: 1;
-  padding: 40px 30px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: red;
 }
 
 .login-form h2 {
+  margin-bottom: 25px;
+  color: #333;
   text-align: center;
-  margin-bottom: 30px;
-  color: #2e7d32;
 }
 
-/* Grupo de entrada */
 .input-group {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px 15px;
+  position: relative;
   margin-bottom: 20px;
-  transition: border-color 0.3s ease;
-}
-
-.input-group:focus-within {
-  border-color: #2e7d32;
 }
 
 .input-icon {
-  color: #2e7d32;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
 }
 
-.input-group input {
-  border: none;
-  outline: none;
-  flex: 1;
-  margin-left: 10px;
-  font-size: 15px;
-  background-color: #fff;
-}
-
-/* Botão de envio */
-button[type="submit"] {
-  padding: 12px;
+input {
   width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #4caf50;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
   border: none;
   border-radius: 8px;
-  background-color: #2e7d32;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-  background-color: #1b5e20;
+button:hover {
+  background-color: #43a047;
 }
 
-/* Mensagem de erro */
 .erro {
-  color: #fff;
-  background-color: #c62828;
-  padding: 10px;
-  border-radius: 8px;
+  color: red;
+  margin-top: 10px;
   text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
 }
 
-/* Link de cadastro */
-.login-form p {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-}
-
-.login-form a {
-  color: #2e7d32;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.login-form a:hover {
-  text-decoration: underline;
-}
-
-/* Responsividade */
 @media (max-width: 768px) {
   .login-card {
     flex-direction: column;
-    width: 100%;
   }
 
   .login-image {
     height: 200px;
   }
-
-  .login-image::after {
-    font-size: 12px;
-    padding: 12px;
-  }
-
-  .login-form {
-    padding: 30px 20px;
-  }
 }
-
-/*novo
