@@ -106,7 +106,7 @@ function Cadastrar() {
 
         <p style={{ marginTop: "15px", textAlign: "center" }}>
           Já tem conta?{" "}
-          <Link to="/" style={{ color: "#007bff", textDecoration: "none" }}>
+          <Link className="entrar" to="/" style={{ color: "#007bff", textDecoration: "none" }}>
             Entrar
           </Link>
         </p>
