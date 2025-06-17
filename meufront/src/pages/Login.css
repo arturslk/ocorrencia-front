@@ -61,7 +61,7 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: black;
 }
 
 .login-form h2 {
